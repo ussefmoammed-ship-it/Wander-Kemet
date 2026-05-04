@@ -1,0 +1,826 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Elegance in Every Journey
+            Discover timeless destinations where history, culture, and beauty meet. From iconic landmarks to hidden treasures, we craft travel experiences that go beyond the ordinary.
+            Travel with style. Explore with purpose. Create moments that last forever.">
+        <title>Wander Kemet-plan-your-trip</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBMzlUvyyFUvskPokeZnMjBOi4VQ_FpwJagg&s">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+        a {
+        color: var(--gold);
+        }
+        h1, h2, h3 {
+        font-family: 'Cormorant Garamond', serif;
+        line-height: 1.25;
+        }
+        .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.4rem;
+        }
+        .site-header {
+        background: rgba(0,0,0,0.5);
+        color: var(--sand);
+        text-align: center;
+        padding: 4rem 1.4rem 3.5rem;
+        position: relative;
+        }
+        .site-header::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 4px;
+        background: linear-gradient(to right, var(--gold), #e8b84b, var(--gold));
+        }
+        .brand {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 0.95rem;
+        color: white;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        margin-bottom: 0.9rem;
+        }
+        .site-header h1 {
+        font-size: clamp(2.2rem, 6vw, 4rem);
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 0.8rem;
+        }
+        .subtitle {
+        font-size: 1rem;
+        color: rgba(245, 234, 216, 0.75);
+        font-weight: 300;
+        max-width: 480px;
+        margin: 0 auto;
+        }
+        .section-title {
+        font-size: clamp(1.6rem, 4vw, 2.4rem);
+        font-weight: 600;
+        color: #fff;
+        margin-bottom: 0.4rem;
+        }
+        .city-card {
+        position: relative;
+        overflow: hidden;
+        }
+        .section-title::after {
+        content: '';
+        display: block;
+        width: 48px;
+        height: 2px;
+        background: var(--gold);
+        margin-top: 0.5rem;
+        }
+        .section-sub {
+        color: #ddd;
+        font-size: 0.95rem;
+        margin-top: 0.4rem;
+        }
+        .cities-section {
+        padding: 4rem 0;
+        }
+        .cities-grid {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+        gap: 1.3rem;
+        }
+        .city-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        overflow: hidden;
+        transition: box-shadow 0.25s, transform 0.25s;
+        }
+        .city-card:hover {
+        box-shadow: 0 8px 24px rgba(59,33,8,0.18);
+        transform: translateY(-4px);
+        }
+        .city-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        transition: transform 0.4s;
+        }
+        .city-card:hover img {
+        transform: scale(1.04);
+        }
+        .card-info {
+        padding: 1rem 1.1rem 1.2rem;
+        }
+        .card-info h3 {
+        font-size: 1.2rem;
+        color: var(--brown);
+        margin-bottom: 0.3rem;
+        }
+        .card-info p {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        line-height: 1.55;
+        }
+        .map-frame {
+        margin-top: 1.5rem;
+        border: 1px solid var(--gold);
+        border-radius: 6px;
+        overflow: hidden;
+        max-width: 600px;
+        width: 100%;
+
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(6px);
+        }
+        .map-frame iframe,
+        #map {
+        width: 100%;
+        height: 500px;
+        border-radius: 6px;
+        }
+        .map-section .wrap,
+        .contact-section .wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+        form {
+        margin-top: 1.5rem;
+        max-width: 400px;
+        width: 100%;
+
+        background: rgba(0,0,0,0.5);
+        border: 1px solid var(--gold);
+        border-radius: 6px;
+        padding: 1.5rem;
+
+        backdrop-filter: blur(6px);
+        }.field-group input {
+        width: 100%;
+        padding: 0.6rem;
+        border: 1px solid var(--gold);
+        border-radius: 4px;
+
+        background: rgba(255,255,255,0.1);
+        color: #fff;
+        }
+        form button {
+        width: 100%;
+        padding: 0.7rem;
+        background: var(--gold);
+        color: #000;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        }
+
+        form button:hover {
+        background: var(--gold-light);
+        }
+        #generate-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 12px 28px;
+
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 1px;
+
+        color: #000;
+        background: linear-gradient(135deg, #f5c76b, #e8b84b);
+
+        border: none;
+        border-radius: 30px;
+
+        cursor: pointer;
+
+        transition: all 0.3s ease;
+
+        box-shadow: 
+            0 0 10px rgba(255, 193, 7, 0.4),
+            0 4px 15px rgba(0,0,0,0.5);
+        }
+        #generate-btn:hover {
+        transform: translateY(-3px) scale(1.05);
+
+        background: linear-gradient(135deg, #ffd369, #ffb347);
+
+        box-shadow:
+            0 0 20px rgba(255, 193, 7, 0.8),
+            0 8px 25px rgba(0,0,0,0.7);
+        }
+        #generate-btn:active {
+        transform: scale(0.95);
+        box-shadow: 0 0 5px rgba(255,193,7,0.5);
+        }
+        .generator-box {
+        margin-top: 1.8rem;
+        background: rgba(0,0,0,0.5);
+        border: 1px solid var(--gold);
+        backdrop-filter: blur(8px);
+        border-radius: 4px;
+        padding: 2rem 1.8rem;
+        max-width: 560px;
+        }
+        .generator-box label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        color: #ddd;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        }
+        .generator-box select {
+        width: 100%;
+        padding: 0.65rem 0.9rem;
+        border: 1px solid var(--gold);
+        border-radius: 3px;
+        background: rgba(0,0,0,0.6);
+        color: #2e1a0a;
+        font-family: 'Jost', sans-serif;
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%237a4a22' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.9rem center;
+        }
+        .generator-box select:focus {
+        outline: none;
+        border-color: var(--gold);
+        }
+        .card-info p {
+        color: #fff !important;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+        }
+        .card-info h3 {
+        color: #fff !important;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+        }
+        :root {
+        --nav-height: 80px;
+        }
+        body {
+        padding-top: 80px; 
+        }
+        nav,
+        .navbar,
+        header.navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        }
+        .site-header {
+        position: relative;
+        z-index: 1;
+        }
+        .plan-output {
+        margin: 3rem auto;
+        padding: 3rem ;
+
+        max-width: 800px;
+        width: 90%;
+
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(10px);
+
+        border: 1.5px solid rgba(255, 193, 7, 0.6);
+        border-radius: 16px;
+
+        text-align: center;
+        color: #fff;
+
+        box-shadow:
+            0 0 20px rgba(255,193,7,0.2),
+            0 10px 40px rgba(0,0,0,0.6);
+
+        transition: 0.3s ease;
+        }
+        .plan-output:hover {
+        transform: translateY(-5px) scale(1.01);
+        box-shadow:
+            0 0 30px rgba(255,193,7,0.4),
+            0 15px 50px rgba(0,0,0,0.8);
+        }
+        .plan-output h3 {
+        font-size: 32px;
+        color: #f5c76b;
+        margin-bottom: 10px;
+        letter-spacing: 1px;
+        }
+        .plan-output p {
+        font-size: 17px;
+        color: #eee;
+        line-height: 1.9;
+        max-width: 600px;
+        margin: auto;
+        }
+        .plan-output * {
+        margin-bottom: 10px;
+        }
+  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBMzlUvyyFUvskPokeZnMjBOi4VQ_FpwJagg&s">
+</head>
+<body class="plan-page">
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="brand">Wander kemet</p>
+      <h1>Plan Your Trip</h1>
+      <p class="subtitle">Tell us where you want to go — we'll help you figure out the rest.</p>
+    </div>
+  </header>
+          <nav class="navb">
+            <div class="logo">
+                <img src="i/icon_top.png">
+            </div>
+            <ul class="navb-links">
+                <li><a href="index.html"><i class="fas fa-home"></i>HOME</a></li>
+                <li><a href="Destinations.html"><i class="fas fa-map-marker-alt"></i>DESTINATIONS</a></li>
+                <li><a href="historical_Sites.html"><i class="fas fa-landmark"></i>HISTORICAL SITES</a></li>
+                <li><a href="Museums.html"><i class="fas fa-university"></i>MUSEUM</a></li>
+                <li><a href="Plan_Your_Trip.html"><i class="fas fa-suitcase"></i>PLAN YOUR TRIP</a></li>
+                <li><a href="Gallery.html"><i class="fas fa-images"></i>GALLERY</a></li>
+                <li><a href="Travel_Blog.html"><i class="fas fa-feather"></i>TRAVEL BLOG</a></li>
+            </ul>
+            <div class="navb-action">
+                <div class="theme-toggle" onclick="toggleTheme()">
+                    <i id="theme-icon" class="fas fa-moon"></i>
+                </div>
+                <a href="Contact.html" class="login-btn">
+                    <i class="fas fa-user"></i>
+                    Login
+                </a>
+            </div>
+        </nav>
+  <main>
+
+    <section class="cities-section" id="cities">
+      <div class="wrap">
+        <h2 class="section-title">Choose Your Destination</h2>
+        <div class="cities-grid">
+
+          <article class="city-card">
+            <img src="https://images.unsplash.com/photo-1568322445389-f64ac2515020?w=600&q=75" alt="Cairo" loading="lazy" />
+            <div class="card-info">
+              <h3>Cairo</h3>
+              <p>Sprawling, noisy, electric. Medieval mosques, ancient museums, and the pyramids on the city edge.</p>
+            </div>
+          </article>
+
+          <article class="city-card">
+            <img src="https://images.unsplash.com/photo-1633624646814-3a61ed3e2847?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Alexandria" loading="lazy" />
+            
+            <div class="card-info">
+              <h3>Alexandria</h3>
+              <p>Egypt's Mediterranean soul — seafront promenades, Greco-Roman ruins, and excellent fresh seafood.</p>
+            </div>
+          </article>
+
+          <article class="city-card">
+            <img src=" https://images.unsplash.com/photo-1629468855534-450d7c4c5f72?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bHV4b3IlMjBlZ3lwdHxlbnwwfHwwfHx8MA%3D%3D" alt="Luxor" loading="lazy" />
+
+            <div class="card-info">
+              <h3>Luxor</h3>
+              <p>The world's greatest open-air museum. Karnak, the Valley of the Kings, temples that still feel alive.</p>
+            </div>
+          </article>
+
+          <article class="city-card">
+            <img src="https://plus.unsplash.com/premium_photo-1694475186845-b446986aba6b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YXN3YW4lMjBlZ3lwdHxlbnwwfHwwfHx8MA%3D%3D" alt="Aswan" loading="lazy" />
+
+            <div class="card-info">
+              <h3>Aswan</h3>
+              <p>Quieter than Luxor, just as beautiful. Nubian villages, felucca rides, and Abu Simbel nearby.</p>
+            </div>
+          </article>
+
+          <article class="city-card">
+            <img src="https://images.unsplash.com/photo-1705628080778-f86b2f90a114?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z2l6YXxlbnwwfHwwfHx8MA%3D%3D" alt="Giza" loading="lazy" />
+            <div class="card-info">
+              <h3>Giza</h3>
+              <p>The last standing Wonder of the Ancient World. Nothing else comes close to seeing them in person.</p>
+            </div>
+          </article>
+
+          <article class="city-card">
+            <img src="https://plus.unsplash.com/premium_photo-1699535659313-c95cf8111235?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmF5b3VtfGVufDB8fDB8fHww" alt="Fayoum" loading="lazy" />
+
+            <div class="card-info">
+              <h3>Fayoum</h3>
+              <p>Desert waterfalls, fossils, and a saltwater lake. Egypt's most underrated weekend escape.</p>
+            </div>
+          </article>
+
+          <article class="city-card">
+            <img src="https://images.unsplash.com/photo-1676387119663-8474b2d7ea49?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZGFoYWIlMjBlZ3lwdHxlbnwwfHwwfHx8MA%3D%3D" alt="Dahab" loading="lazy" />
+            <div class="card-info">
+              <h3>Dahab</h3>
+              <p>Sinai's relaxed dive town. Backpackers arrive for three days and end up staying for a month.</p>
+            </div>
+          </article>
+
+          <article class="city-card">
+            <img src="https://plus.unsplash.com/premium_photo-1674156433236-2338418ec4d9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGh1cmdoYWRhfGVufDB8fDB8fHww" alt="Hurghada" loading="lazy" />
+
+            <div class="card-info">
+              <h3>Hurghada</h3>
+              <p>Popular Red Sea resort city. Warm water year-round, accessible reefs, and plenty of options for all budgets.</p>
+            </div>
+          </article>
+
+          <article class="city-card">
+            <img src=" https://images.unsplash.com/photo-1529552193644-4e183c169aeb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8c2l3YSUyMG9hc2lzfGVufDB8fDB8fHww/>
+              " alt="Siwa" loading="lazy" />
+            <div class="card-info">
+              <h3>Siwa</h3>
+              <p>Remote Berber oasis near Libya. Salt lakes, ancient oracle ruins, and some of the best stargazing in Africa.</p>
+            </div>
+          </article>
+
+          <article class="city-card">
+            <img src="https://images.unsplash.com/photo-1576436445430-43d6d7c9aea5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVkJTIwc2VhfGVufDB8fDB8fHww" alt="Marsa Alam" loading="lazy" />
+
+            <div class="card-info">
+              <h3>Marsa Alam</h3>
+              <p>Wild and uncrowded. Dugongs, shark reefs, and a coastline that hasn't been overdeveloped yet.</p>
+            </div>
+          </article>
+
+          <article class="city-card">
+            <img src="https://images.unsplash.com/photo-1580058328338-5412e1123bf8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fHNoYXJtJTIwZWwlMjBzaGVpa2h8ZW58MHx8MHx8fDA%3D%3D" alt="Sharm El Sheikh" loading="lazy" />
+            <div class="card-info">
+              <h3>Sharm El Sheikh</h3>
+              <p>Clear bays, vibrant coral, and resort infrastructure. A well-worn classic for a reason.</p>
+            </div>
+          </article>
+
+          <article class="city-card">
+            <img src="https://images.unsplash.com/photo-1663596680812-0df611df4fe0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Minya" loading="lazy" />
+            <div class="card-info">
+              <h3>Minya</h3>
+              <p>Cliff tombs, abandoned pharaonic cities, Coptic monasteries — and almost no other tourists around.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="plan-section" id="plan">
+      <div class="wrap">
+        <h2 class="section-title">Generate My Plan</h2>
+        <p class="section-sub">Pick a destination and get a quick, honest travel guide.</p>
+
+        <div class="generator-box">
+          <label for="city-select">Where are you headed?</label>
+          <select id="city-select" onchange="updateAll()">
+            <option value="">— Select a city —</option>
+            <option value="cairo">Cairo</option>
+            <option value="alexandria">Alexandria</option>
+            <option value="luxor">Luxor</option>
+            <option value="aswan">Aswan</option>
+            <option value="dahab">Dahab</option>
+            <option value="hurghada">Hurghada</option>
+            <option value="siwa">Siwa</option>
+            <option value="marsaalam">Marsa Alam</option>
+            <option value="sharm">Sharm El Sheikh</option>
+            <option value="minya">Minya</option>
+          </select>
+        <button id="generate-btn" onclick="updateAll()">Generate My Plan</button>
+        </div>
+
+        <div id="plan-output" class="plan-output"></div>
+      </div>
+    </section>
+
+    <section class="map-section" id="map">
+      <div class="wrap">
+        <h2 class="section-title">Egypt on the Map</h2>
+        <div class="map-frame">
+          <iframe id="mapFrame"width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=24.7%2C21.9%2C37.2%2C31.7&layer=mapnik"
+            title="Map of Egypt"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="map-credit">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a></p>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="wrap">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-sub" style="padding: 20px;">Questions about your trip? Drop us a message.</p>
+      </div>
+    </section>
+    
+
+  </main>
+          <footer class="footer">
+            <div class="footer-top">
+                <img src="i/icon.png" alt="">
+                <h2>Start your journey through history today.</h2>
+            </div>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h1>WANDER <span>KEMET</span></h1>
+            <br>
+            <br>
+            <h2>About Us</h2>
+            <p>
+                Wander Kemet brings you closer to the timeless beauty of Egypt — exploring its history, culture, and unforgettable destinations.
+            </p>
+        </div>
+        <div class="footer-col">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i>Home</a></li>
+                <li>
+                    <a href="Destinations.html">
+                        <i class="fa-solid fa-chevron-right"></i>Destinations
+                    </a>
+                </li>
+                <li><a href="historical_Sites.html"><i class="fa-solid fa-chevron-right"></i>Historical Sites</a></li>
+                <li><a href="Museums.html"><i class="fa-solid fa-chevron-right"></i>Museums</a></li>
+                <li><a href="Plan_Your_Trip.html"><i class="fa-solid fa-chevron-right"></i>Plan Your Trip</a></li>
+                <li><a href="Gallery.html"><i class="fa-solid fa-chevron-right"></i>Gallery</a></li>
+                <li><a href="Travel_Blog.html"><i class="fa-solid fa-chevron-right"></i>Travel Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h2>Featured Places</h2>
+            <div class="place">
+                <img src="https://alolabor.org/wp-content/uploads/2025/11/GEM_01-11-2025.jpg">
+                <div>
+                    <p>The Egyptian Museum</p>
+                    <span><i class="fa-solid fa-location-dot"></i> Cairo</span>
+                </div>
+            </div>
+            <div class="place">
+                <img src="https://media.elbalad.news/2024/10/large/961/7/200.jpg">
+                <div>
+                    <p>National Museum of Egyptian Civilization</p>
+                    <span><i class="fa-solid fa-location-dot"></i> Cairo</span>
+                </div>
+            </div>
+            <div class="place">
+                <img src="https://images.pexels.com/photos/10131669/pexels-photo-10131669.jpeg">
+                <div>
+                    <p>Pyramids of Giza</p>
+                    <span><i class="fa-solid fa-location-dot"></i> Giza</span>
+                </div>
+            </div>            
+            <div class="place">
+                <img src="https://images.unsplash.com/photo-1678640982613-70150a406d0a?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <div>
+                    <p>Karnak Temple</p>
+                    <span><i class="fa-solid fa-location-dot"></i> Luxor</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h2>Contact Info</h2>
+            <span><i class="fa-regular fa-envelope"></i></span>  info@exploreegypt.com<br>
+            <br>
+            <span><i class="fa-solid fa-phone"></i></span>  +20 123 456 7890<br>
+            <br>
+            <span><i class="fa-solid fa-location-dot"></i></span> Cairo, Egypt<br>
+            <br>
+            <h2>Newsletter</h2>
+            <p>Subscribe to get the latest updates and travel offers.</p>
+            <div class="newsletter">
+                <input type="email" placeholder="Enter your email">
+                <button>➤</button>
+            </div>
+        </div>
+    </div>
+    <div class="social">
+        <h2 class="font">Follow Us</h2>
+        <div class="icons">
+            <span><i class="fa-brands fa-facebook-f"></i></span>
+            <span><i class="fa-brands fa-instagram"></i></span>
+            <span><i class="fa-brands fa-youtube"></i></span>
+            <span><i class="fa-brands fa-twitter"></i></span>
+            <span><i class="fa-brands fa-whatsapp"></i></span>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Wander Kemet | Crafted with precision by Shadow Elite. All Rights Reserved.</p>
+    </div>
+</footer>
+  <script>
+   function updateAll() {
+  let city = document.getElementById("city-select").value;
+  let result = document.getElementById("plan-output");
+  let map = document.getElementById("mapFrame");
+  if (city === "") {
+    result.innerHTML = "Choose a city first";
+    return;
+  }
+  if (city === "cairo") {
+    result.innerHTML = "Pyramids + Museum + Khan El Khalili";
+    map.src = "https://www.openstreetmap.org/export/embed.html?bbox=31.2,30.0,31.4,30.2";
+    result.innerHTML += "<h3>Cairo</h3>";
+    result.innerHTML += `<p>From the timeless allure of the Pyramids to the vibrant energy of Khan El Khalili, Cairo offers a blend of ancient wonders and bustling culture. Explore the rich tapestry of history and modern life in this dynamic city.
+          Start your journey in Cairo with a visit to the iconic Giza Pyramids and the Great Sphinx.
+Continue to the Egyptian Museum to explore ancient treasures, including Tutankhamuns collection.
+Discover the charm of Old Cairo by visiting Khan El Khalili Bazaar and Al-Muizz Street for a unique cultural experience.
+
+Stay near downtown or Zamalek for easy access to major attractions. Popular hotels include budget options and luxury stays near the Nile.
+
+For transportation, you can book domestic flights through EgyptAir or use trains and buses for cheaper options.
+Tickets to historical sites can be purchased at the entrance or online through official tourism websites.
+
+Enjoy local food, Nile cruises, and unforgettable views of one of the world's oldest cities.
+</p>`;
+  }
+  else if (city === "alexandria") {
+    result.innerHTML = "Library + Qaitbay + Sea";
+    map.src = "https://www.openstreetmap.org/export/embed.html?bbox=29.8,31.1,30.1,31.3";
+    result.innerHTML += "<h3>Alexandria</h3>";
+    result.innerHTML += `<p>Start your trip in Alexandria by visiting the famous Bibliotheca Alexandrina, one of the most important cultural landmarks in Egypt.
+Head to Qaitbay Citadel, located on the Mediterranean coast, offering stunning sea views and historical significance.
+
+Take a relaxing walk along the Corniche and enjoy the sea breeze.
+Visit Montaza Palace Gardens for a peaceful experience surrounded by nature and royal architecture.
+
+For accommodation, stay near the Corniche or in central Alexandria for easy access to attractions.
+You can find a range of hotels from budget stays to luxury options with sea views.
+
+Traveling to Alexandria is easy by train from Cairo or by road.
+Tickets to attractions are available at entrances, and some locations may offer online booking.
+
+Don't forget to try fresh seafood at local restaurants and enjoy the unique Mediterranean vibe of the city.
+Experience the charm of Alexandria with its historic library, the impressive Qaitbay Citadel, and the beautiful Mediterranean coastline.</p>`;
+  }
+
+  else if (city === "luxor") {
+    result.innerHTML = "Karnak + Valley of Kings";
+    map.src = "https://www.openstreetmap.org/export/embed.html?bbox=32.6,25.6,32.8,25.8";
+    result.innerHTML += "<h3>Luxor</h3>";
+    result.innerHTML += `<p>Begin your journey in Luxor by visiting Karnak Temple, one of the largest temple complexes in the world, filled with massive columns and ancient hieroglyphs.
+Continue to Luxor Temple, beautifully illuminated at night and located along the Nile.
+
+Explore the West Bank, including the Valley of the Kings where the tombs of ancient pharaohs are located, and the Temple of Hatshepsut, a stunning architectural masterpiece.
+
+For accommodation, stay near the Nile or in central Luxor for easy access to both East and West Bank attractions.
+You can find budget hotels as well as luxury resorts with Nile views.
+
+Travel to Luxor by domestic flights via EgyptAir, or take a sleeper train from Cairo.
+Tickets to sites are available at entrances or through official booking platforms.
+
+Enjoy a Nile boat ride or a hot air balloon experience at sunrise for unforgettable views of ancient Egypt.
+Discover the ancient temples of Luxor, including the impressive Karnak Temple and the Valley of the Kings.</p>`;
+  }
+
+  else if (city === "aswan") {
+    result.innerHTML = "Philae + Nubian Village";
+    map.src = "https://www.openstreetmap.org/export/embed.html?bbox=32.8,24.0,33.1,24.2";
+    result.innerHTML += "<h3>Aswan</h3>";
+    result.innerHTML += `<p>    Start your journey in Aswan with a visit to Philae Temple, located on a beautiful island and dedicated to the goddess Isis. 
+Take a relaxing felucca ride on the Nile to enjoy the calm scenery and stunning sunset views.
+
+Explore the Nubian Village to experience colorful houses, local culture, and traditional food. 
+Visit the Aswan High Dam and the Unfinished Obelisk to learn more about Egypt’s modern and ancient engineering.
+
+For accommodation, stay near the Nile or Elephantine Island for peaceful views and easy access to attractions. 
+There are options ranging from budget stays to luxury resorts.
+
+Travel to Aswan by domestic flights via EgyptAir or by train from Cairo or Luxor. 
+Tickets to attractions are available at entrances, and some can be booked online.
+
+Enjoy the relaxed atmosphere, warm weather, and unique Nubian culture that makes Aswan one of Egypt’s most beautiful destinations.   Explore the ancient ruins of Philae and the vibrant Nubian villages of Aswan.</p>`;
+  }
+
+  else if (city === "dahab") {
+    result.innerHTML = "Blue Hole + Safari";
+    map.src = "https://www.openstreetmap.org/export/embed.html?bbox=34.4,28.4,34.6,28.6";
+    result.innerHTML += "<h3>Dahab</h3>";
+    result.innerHTML += `<p>   Start your trip in Dahab with a visit to the famous Blue Hole, one of the best diving and snorkeling spots in the world.
+Enjoy the crystal-clear water and vibrant coral reefs filled with marine life.
+
+Take a desert safari by quad bike or camel to explore the stunning Sinai mountains.
+Visit the Blue Lagoon for a calm and relaxing beach experience away from crowds.
+
+For accommodation, stay in beachfront camps or hotels in Dahab city for easy access to diving spots and restaurants.
+Options range from budget-friendly camps to comfortable hotels.
+
+Travel to Dahab via Sharm El Sheikh airport, then take a bus or taxi to Dahab.
+Activities like diving and safari can be booked through local centers or online.
+
+Enjoy the peaceful atmosphere, beach cafés, and unforgettable Red Sea views.  Experience the thrill of the Blue Hole and explore the desert landscapes of Dahab.</p>`;
+  }
+
+  else if (city === "hurghada") {
+    result.innerHTML = "Snorkeling + Desert";
+    map.src = "https://www.openstreetmap.org/export/embed.html?bbox=33.7,27.1,34.0,27.4";
+    result.innerHTML += "<h3>Hurghada</h3>";
+    result.innerHTML += `<p>  Start your trip in Hurghada with a snorkeling or diving experience in the Red Sea, known for its crystal-clear water and colorful coral reefs. 
+Take a boat trip to Giftun Island for a relaxing beach day with white sand and turquoise water.
+
+Enjoy a desert safari adventure by quad bike or jeep, where you can explore the Eastern Desert and experience Bedouin culture. 
+Visit Hurghada Marina for restaurants, cafés, and nightlife.
+
+For accommodation, stay in beachfront resorts or hotels along the Red Sea for easy access to activities and البحر views. 
+Options range from affordable hotels to luxury all-inclusive resorts.
+
+Travel to Hurghada by domestic flights from Cairo or international flights directly. 
+Activities can be booked through hotels or online platforms.
+
+Enjoy the sunny weather, water sports, and relaxing beach atmosphere.   Enjoy the crystal-clear waters of Hurghada for snorkeling and explore the vast desert landscapes.</p>`;
+  }
+
+  else if (city === "siwa") {
+    result.innerHTML = "Salt Lakes + Safari";
+    map.src = "https://www.openstreetmap.org/export/embed.html?bbox=25.4,29.1,25.7,29.3";
+    result.innerHTML += "<h3>Siwa</h3>";
+    result.innerHTML += `<p>Start your journey in Siwa by visiting the famous Salt Lakes, where you can float effortlessly in crystal-clear المياه الغنية بالمعادن. 
+Explore the Temple of the Oracle, a historic site visited by Alexander the Great.
+
+Visit Cleopatra’s Spring for a refreshing natural water experience, and enjoy the unique desert landscape surrounding the oasis. 
+Take a 4x4 desert safari to discover the Great Sand Sea, sandboarding spots, and breathtaking sunset views.
+
+For accommodation, stay in eco-lodges or traditional Siwan-style hotels that offer a peaceful and authentic experience. 
+Many places provide organic food and natural surroundings.
+
+Travel to Siwa by bus or car from Marsa Matrouh or Cairo, as there are no direct flights. 
+Activities and tours can be arranged through local guides or hotels.
+
+Enjoy the calm atmosphere, star-filled skies, and one of the most unique destinations in Egypt.     Remote Berber oasis near Libya. Salt lakes, ancient oracle ruins, and some of the best stargazing in Africa.</p>`;
+  }
+  else if (city === "marsaalam") {
+    result.innerHTML = "Diving + Relax";
+    map.src = "https://www.openstreetmap.org/export/embed.html?bbox=34.8,25.0,35.1,25.3";
+    result.innerHTML += "<h3>Marsa Alam</h3>";
+    result.innerHTML += `<p> Start your trip in Marsa Alam by exploring its world-famous coral reefs and crystal-clear waters, making it one of the best diving destinations in the Red Sea. 
+Visit Abu Dabbab Beach, where you can swim with sea turtles and enjoy the calm sandy shore.
+
+Take a snorkeling or diving trip to Sataya Reef (Dolphin House), where you may see dolphins in their natural habitat. 
+Explore Wadi El Gemal National Park for a mix of desert landscapes, wildlife, and untouched beaches.
+
+For accommodation, stay in beachfront resorts offering peaceful views and direct access to the sea. 
+Options include both luxury resorts and budget-friendly stays.
+
+Travel to Marsa Alam via domestic or international flights to Marsa Alam Airport. 
+Activities like diving and snorkeling can be booked through hotels or local centers.
+
+Enjoy the quiet atmosphere, clean beaches, and one of Egypt’s most beautiful natural environments.Experience the underwater beauty of Marsa Alam with its vibrant coral reefs and diverse marine life.</p>`;
+  }
+  else if (city === "sharm") {
+    result.innerHTML = "Naama Bay + Diving";
+    map.src = "https://www.openstreetmap.org/export/embed.html?bbox=34.2,27.8,34.6,28.2";
+    result.innerHTML += "<h3>Sharm El Sheikh</h3>";
+    result.innerHTML += `<p> Start your journey in Sharm El Sheikh with a snorkeling or diving trip in Ras Mohammed National Park, one of the most famous marine reserves in the world. 
+Enjoy crystal-clear water, colorful coral reefs, and rich marine life.
+
+Visit Naama Bay, the heart of the city, full of restaurants, cafés, shops, and nightlife. 
+Spend time at SOHO Square for entertainment, shows, and a modern atmosphere.
+
+Take a desert safari to explore the Sinai mountains and enjoy a Bedouin dinner under the stars. 
+You can also try water sports like parasailing and jet skiing.
+
+For accommodation, stay in luxury beachfront resorts or all-inclusive hotels with direct access to the Red Sea. 
+Options range from affordable hotels to high-end resorts.
+
+Travel to Sharm El Sheikh via domestic or international flights. 
+Activities and excursions can be booked through hotels or online platforms.
+
+Enjoy the mix of relaxation, adventure, and vibrant nightlife in one of Egypt’s top tourist destinations.  Enjoy the pristine beaches and crystal-clear waters of Naama Bay, perfect for diving and water sports.</p>`;
+  }
+  else if (city === "minya") {
+    result.innerHTML = "Beni Hassan Tombs";
+    map.src = "https://www.openstreetmap.org/export/embed.html?bbox=30.6,28.0,30.9,28.3";
+    result.innerHTML += "<h3>Minya</h3>";
+    result.innerHTML += `<p> Start your journey in Minya by visiting Beni Hassan Tombs, one of the most important archaeological sites in Middle Egypt, featuring unique wall paintings that reflect ancient Egyptian daily life.
+
+Explore Tell El Amarna, the city built by Akhenaten, where you can discover ruins of temples and royal tombs connected to the Amarna period. 
+Visit Tuna El-Gebel, home to ancient catacombs and the tomb of Petosiris.
+
+Take time to explore the Nile surroundings and enjoy the peaceful atmosphere away from crowded tourist areas. 
+Minya offers a more authentic and quiet experience compared to other cities.
+
+For accommodation, stay in central Minya where basic hotels are available. 
+Options are limited but suitable for short stays.
+
+Travel to Minya by train or car from Cairo, which is the most common and convenient way. 
+Tickets to sites are usually available at entrances.
+
+Enjoy the calm vibe, historical depth, and hidden gems of one of Egypt’s underexplored regions.  Explore the ancient cliff tombs of Beni Hassan and discover the rich history of this fascinating region.</p>`;
+  }
+}
+  </script>
+  <script src="main.js"></script>
+</body>
+</html>

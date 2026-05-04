@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Elegance in Every Journey
+Discover timeless destinations where history, culture, and beauty meet. From iconic landmarks to hidden treasures, we craft travel experiences that go beyond the ordinary.
+Travel with style. Explore with purpose. Create moments that last forever.">
+        <title>Wander Kemet-Gallery</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBMzlUvyyFUvskPokeZnMjBOi4VQ_FpwJagg&s">
+    </head>
+    <body class="bdy">
+        <nav class="navb">
+            <div class="logo">
+                <img src="i/icon_top.png">
+            </div>
+            <ul class="navb-links">
+                <li><a href="index.html"><i class="fas fa-home"></i>HOME</a></li>
+                <li><a href="Destinations.html"><i class="fas fa-map-marker-alt"></i>DESTINATIONS</a></li>
+                <li><a href="historical_Sites.html"><i class="fas fa-landmark"></i>HISTORICAL SITES</a></li>
+                <li><a href="Museums.html"><i class="fas fa-university"></i>MUSEUM</a></li>
+                <li><a href="Plan_Your_Trip.html"><i class="fas fa-suitcase"></i>PLAN YOUR TRIP</a></li>
+                <li><a href="Gallery.html"><i class="fas fa-images"></i>GALLERY</a></li>
+                <li><a href="Travel_Blog.html"><i class="fas fa-feather"></i>TRAVEL BLOG</a></li>
+            </ul>
+            <div class="navb-action">
+                <div class="theme-toggle" onclick="toggleTheme()">
+                    <i id="theme-icon" class="fas fa-moon"></i>
+                </div>
+                <a href="Contact.html" class="login-btn">
+                    <i class="fas fa-user"></i>
+                    Login
+                </a>
+            </div>
+        </nav>     
+        <style>
+            .bdy{
+                font-family: Arial;
+                text-align: center;
+                padding: 100px 0 0 0;
+            }
+            .gallery {
+            column-count: 4;
+            column-gap: 10px;
+            padding: 10px;
+            }
+            .gallery img {
+            width: 100%;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            }
+            .gallery img:hover {
+                transform: scale(1.05);
+                transition: transform 0.3s ease;
+            }
+        </style>
+            <h1 style="color:#5B1F11 ;text-shadow:2px 3px #D4AF37; ">Gallery</h1>
+            <h2 style="padding-top :20px;"> On this page you will find pictures of all civilizations and historical eras. </h2>
+            <hr>
+            <div class="gallery" id="gallery"></div>
+            <script>
+                let gallery = document.getElementById("gallery");
+
+                for (let i = 1; i <= 30; i++) {
+                    let img = document.createElement("img");
+                    img.src = "gallery/photo (" + i + ").jpg";
+                    gallery.appendChild(img);
+                }
+            </script>
+                    <footer class="footer">
+            <div class="footer-top">
+                <img src="i/icon.png" alt="">
+                <h2>Start your journey through history today.</h2>
+            </div>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h1>WANDER <span>KEMET</span></h1>
+            <br>
+            <br>
+            <h2>About Us</h2>
+            <p>
+                Wander Kemet brings you closer to the timeless beauty of Egypt — exploring its history, culture, and unforgettable destinations.
+            </p>
+        </div>
+        <div class="footer-col">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i>Home</a></li>
+                <li>
+                    <a href="Destinations.html">
+                        <i class="fa-solid fa-chevron-right"></i>Destinations
+                    </a>
+                </li>
+                <li><a href="historical_Sites.html"><i class="fa-solid fa-chevron-right"></i>Historical Sites</a></li>
+                <li><a href="Museums.html"><i class="fa-solid fa-chevron-right"></i>Museums</a></li>
+                <li><a href="Plan_Your_Trip.html"><i class="fa-solid fa-chevron-right"></i>Plan Your Trip</a></li>
+                <li><a href="Gallery.html"><i class="fa-solid fa-chevron-right"></i>Gallery</a></li>
+                <li><a href="Travel_Blog.html"><i class="fa-solid fa-chevron-right"></i>Travel Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h2>Featured Places</h2>
+            <div class="place">
+                <img src="https://alolabor.org/wp-content/uploads/2025/11/GEM_01-11-2025.jpg">
+                <div>
+                    <p>The Egyptian Museum</p>
+                    <span><i class="fa-solid fa-location-dot"></i> Cairo</span>
+                </div>
+            </div>
+            <div class="place">
+                <img src="https://media.elbalad.news/2024/10/large/961/7/200.jpg">
+                <div>
+                    <p>National Museum of Egyptian Civilization</p>
+                    <span><i class="fa-solid fa-location-dot"></i> Cairo</span>
+                </div>
+            </div>
+            <div class="place">
+                <img src="https://images.pexels.com/photos/10131669/pexels-photo-10131669.jpeg">
+                <div>
+                    <p>Pyramids of Giza</p>
+                    <span><i class="fa-solid fa-location-dot"></i> Giza</span>
+                </div>
+            </div>            
+            <div class="place">
+                <img src="https://images.unsplash.com/photo-1678640982613-70150a406d0a?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <div>
+                    <p>Karnak Temple</p>
+                    <span><i class="fa-solid fa-location-dot"></i> Luxor</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-col">
+            <h2>Contact Info</h2>
+            <span><i class="fa-regular fa-envelope"></i></span>  info@exploreegypt.com<br>
+            <br>
+            <span><i class="fa-solid fa-phone"></i></span>  +20 123 456 7890<br>
+            <br>
+            <span><i class="fa-solid fa-location-dot"></i></span> Cairo, Egypt<br>
+            <br>
+            <h2>Newsletter</h2>
+            <p>Subscribe to get the latest updates and travel offers.</p>
+            <div class="newsletter">
+                <input type="email" placeholder="Enter your email">
+                <button>➤</button>
+            </div>
+        </div>
+    </div>
+    <div class="social">
+        <h2 class="font">Follow Us</h2>
+        <div class="icons">
+            <span><i class="fa-brands fa-facebook-f"></i></span>
+            <span><i class="fa-brands fa-instagram"></i></span>
+            <span><i class="fa-brands fa-youtube"></i></span>
+            <span><i class="fa-brands fa-twitter"></i></span>
+            <span><i class="fa-brands fa-whatsapp"></i></span>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Wander Kemet | Crafted with precision by Shadow Elite. All Rights Reserved.</p>
+    </div>
+</footer>
+        <script src="main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Elegance in Every Journey
+Discover timeless destinations where history, culture, and beauty meet. From iconic landmarks to hidden treasures, we craft travel experiences that go beyond the ordinary.
+Travel with style. Explore with purpose. Create moments that last forever.">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Wander Kemet</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBMzlUvyyFUvskPokeZnMjBOi4VQ_FpwJagg&s">
+    </head>
+    <body class="bod">    
+        <div class="navbar">
+            <button onclick="toggleMenu()" class="submit">&#9776;</button>
+            <ul id="menu" hidden class="list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Destinations.html">Destinations</a></li>
+                <li><a href="historical_Sites.html">Historical Sites</a></li>
+                <li><a href="Museums.html">Museums</a></li>
+                <li><a href="Plan_Your_Trip.html">Plan Your Trip</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="Travel_Blog.html">Travel Blog</a></li>
+                <li><a href="Contact.html" class="active">Log in</a></li>
+            </ul>
+        </div>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+        <form action="#" method="post">
+             <h1 style="color:#5B1F11 ;text-shadow:2px 3px #D4AF37;padding:20px ">Museum of Ancient Egypt — Ticket Reservation</h1>
+            <hr>
+                <div class="booking">
+                    <h2 class="title"> Choose Your Exhibition</h2>
+                    <input type="radio" id="ex1" name="exhibition" value="ex1">
+                    <label for="ex1"><b>THE ETERNAL PHARAOHS</b>Royal mummies & burial rites of the New Kingdom</label>
+                    <input type="radio" id="ex2" name="exhibition" value="ex2">
+                    <label for="ex2"><b>GODS OF THE NILE</b>Divine statuary and sacred rites of Ra, Osiris & Isis</label>
+                    <input type="radio" id="ex3" name="exhibition" value="ex3">
+                    <label for="ex3"><b>THE ROYAL MUMMIES</b>Preserved remains and burial practices of ancient pharaohs</label>
+                    <input type="radio" id="ex4" name="exhibition" value="ex4">
+                    <label for="ex4"><b>SACRED SCRIPTS</b>Hieroglyphs, papyri & the Book of the Dead</label>
+                </div>
+                <div class="date">
+                    <h2 class="date_title">Select Your Date</h2>
+                    <input type="date" name="visit-date" placeholder="Select date of visit">
+                    <input type="text" name="visit-language" placeholder="Enter preferred language">
+                </div>
+                <div class="ticket">
+                    <h2 class="ticket title">Choose Your Ticket Type</h2>
+                    <input type="radio" id="child" name="ticket-type" value="child">
+                    <label for="child"><b>CHILD</b>(Ages 5-17) - 75 L.E</label>
+                    <input type="radio" id="adult" name="ticket-type" value="adult">
+                    <label for="adult"><b>ADULT</b>(Ages 18-39) - 150 L.E</label>
+                    <input type="radio" id="senior" name="ticket-type" value="senior">
+                    <label for="senior"><b>SENIOR</b>(Ages 40-100) - 200 L.E</label>
+                <h2 class="quantity title">Select Quantity</h2>
+                    <input type="number" name="ticket-quantity" min="1" max="10" placeholder="Enter number of tickets">
+                </div>
+                <div class="visitor-info">
+                <h2 class="visitor title">Enter Visitor Information</h2>
+                    <input type="text" name="visitor-name" placeholder="Enter your full name" required>
+                    <input type="email" name="visitor-email" placeholder="Enter your email address" required>
+                    <input type="tel" name="visitor-phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="order-summary">
+                    <h2 class="summary title">Order Summary</h2>
+                    <p>child tickets:     75 L.E</p>
+                    <p>adult tickets:    150 L.E</p>
+                    <p>senior tickets:    200 L.E</p>
+                </div>
+                <button type="submit" class="submit">Book Now</button>
+        </form>
+        <style>
+            .bod{
+                padding: 850px 0 0 0;
+            }
+            .museum-name{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                color: rgb(255, 255, 255);
+                text-align: center;
+                font-size: 60px;
+                font-style: italic;
+            }
+            .imp-text{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            font-size: 30px;
+            }
+            .booking,
+            .date,
+            .ticket,
+            .visitor-info,
+            .order-summary{
+            width: 90%;
+            max-width: 600px;
+            background-color: #111;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+            margin: 20px auto;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            }
+            .title {
+            color: rgb(255, 255, 255);
+            font-size: 25px;
+            font-style: italic;
+            }
+            label{
+                display: block;
+                cursor: pointer;
+                margin-bottom: 10px;
+                color: white;
+            }
+            input {
+            display: block;
+            padding: 10px;
+            margin: 10px auto;
+            width: 80%;
+            max-width: 300px;
+            border: none;
+            border-radius: 5px;
+            }
+            input:focus {
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+            outline: none;
+            }
+        </style>
+        <script src="main.js" defer></script>
+    </body>
+</html>

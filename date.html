@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Elegance in Every Journey
+Discover timeless destinations where history, culture, and beauty meet. From iconic landmarks to hidden treasures, we craft travel experiences that go beyond the ordinary.
+Travel with style. Explore with purpose. Create moments that last forever.">
+        <title>Wander Kemet</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBMzlUvyyFUvskPokeZnMjBOi4VQ_FpwJagg&s">
+    </head>
+    <body class="bod">
+        <div class="navbar">
+            <button onclick="toggleMenu()" class="submit">&#9776;</button>
+            <ul id="menu" hidden class="list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="historical_Sites.html">Historical Sites</a></li>
+                <li><a href="Destinations.html">Destinations</a></li>
+                <li><a href="Museums.html">Museums</a></li>
+                <li><a href="Plan_Your_Trip.html">Plan Your Trip</a></li>
+                <li><a href="Travel_Blog.html">Travel Blog</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="Contact.html" target="_blank">Log in</a></li>
+            </ul>
+        </div>
+        <div class="progress">
+            <div class="step active">
+                <div class="circle">1</div>
+                <p>Select Date</p>
+            </div>
+            <div class="step">
+                <div class="circle">2</div>
+                <p>Select Time</p>
+            </div>
+            <div class="step">
+                <div class="circle">3</div>
+                <p>Tickets</p>
+            </div>
+            <div class="step">
+                <div class="circle">4</div>
+                <p>Your Details</p>
+            </div>
+            <div class="step">
+                <div class="circle">5</div>
+                <p>Payment</p>
+            </div>
+        </div>
+        <div class="form-step active">
+            <h2>step 1</h2>
+            <button onclick="nextStep()" class="submit">Next</button>
+        </div>
+        <div class="form-step">
+            <h2>step 2</h2>
+            <button onclick="prevStep()" class="submit">Back</button>
+            <button onclick="nextStep()" class="submit">Next</button>
+        </div>        
+        <div class="form-step">
+            <h2>step 3</h2>
+            <button onclick="prevStep()" class="submit">Back</button>
+            <button onclick="nextStep()" class="submit">Next</button>
+        </div>        
+        <div class="form-step">
+            <h2>step 4</h2>
+            <button onclick="prevStep()" class="submit">Back</button>
+            <button onclick="nextStep()" class="submit">Next</button>
+        </div>        
+        <div class="form-step">
+            <h2>step 5</h2>
+            <button onclick="prevStep()" class="submit">Back</button>
+            <button onclick="nextStep()" class="submit">Next</button>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
