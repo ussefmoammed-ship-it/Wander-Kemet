@@ -1,17 +1,39 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Elegance in Every Journey
-Discover timeless destinations where history, culture, and beauty meet. From iconic landmarks to hidden treasures, we craft travel experiences that go beyond the ordinary.
-Travel with style. Explore with purpose. Create moments that last forever.">
+<html lang="en">
+            <meta name="description" content="Elegance in Every Journey
+                    Discover timeless destinations where history, culture, and beauty meet. From iconic landmarks to hidden treasures, we craft travel experiences that go beyond the ordinary.
+                    Travel with style. Explore with purpose. Create moments that last forever.">
         <title>Wander Kemet-Gallery</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBMzlUvyyFUvskPokeZnMjBOi4VQ_FpwJagg&s">
-    </head>
-    <body class="bdy">
-        <nav class="navb">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<head>
+  
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <style>
+  body {
+    font-family: Arial;
+    text-align: center;
+  }
+
+  .gallery {
+  column-count: 4;
+  column-gap: 10px;
+  padding: 10px;
+}
+  .gallery img {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+</style>
+</head>
+    <body style="padding: 100px 0 0 0;">
+                <nav class="navb">
             <div class="logo">
                 <img src="icon_top.png">
             </div>
@@ -33,42 +55,78 @@ Travel with style. Explore with purpose. Create moments that last forever.">
                     Login
                 </a>
             </div>
-        </nav>     
-        <style>
-            .bdy{
-                font-family: Arial;
-                text-align: center;
-                padding: 100px 0 0 0;
-            }
-            .gallery {
-            column-count: 4;
-            column-gap: 10px;
-            padding: 10px;
-            }
-            .gallery img {
-            width: 100%;
-            margin-bottom: 10px;
-            border-radius: 10px;
-            }
-            .gallery img:hover {
-                transform: scale(1.05);
-                transition: transform 0.3s ease;
-            }
-        </style>
-            <h1 style="color:#5B1F11 ;text-shadow:2px 3px #D4AF37; ">Gallery</h1>
-            <h2 style="padding-top :20px;"> On this page you will find pictures of all civilizations and historical eras. </h2>
-            <hr>
-            <div class="gallery" id="gallery"></div>
-            <script>
-                let gallery = document.getElementById("gallery");
-
-                for (let i = 1; i <= 30; i++) {
-                    let img = document.createElement("img");
-                    img.src = "gallery/photo (" + i + ").jpg";
-                    gallery.appendChild(img);
-                }
-            </script>
-                    <footer class="footer">
+        </nav>
+        <h1 style="color:#5B1F11;text-shadow:2px 3px #D4AF37;padding:10px">Gallery</h1>
+        <hr>
+        <div class="gallery" id="gallery">
+            <a href="https://images.pexels.com/photos/28682219/pexels-photo-28682219.jpeg">
+            <img src="https://images.pexels.com/photos/28682219/pexels-photo-28682219.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/37104051/pexels-photo-37104051.jpeg">
+            <img src="https://images.pexels.com/photos/37104051/pexels-photo-37104051.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/28682207/pexels-photo-28682207.jpeg">
+            <img src="https://images.pexels.com/photos/28682207/pexels-photo-28682207.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/35506463/pexels-photo-35506463.jpeg">
+            <img src="https://images.pexels.com/photos/35506463/pexels-photo-35506463.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/17447963/pexels-photo-17447963.jpeg">
+            <img src="https://images.pexels.com/photos/17447963/pexels-photo-17447963.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/28682206/pexels-photo-28682206.jpeg">
+            <img src="https://images.pexels.com/photos/28682206/pexels-photo-28682206.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/15131499/pexels-photo-15131499.jpeg">
+            <img src="https://images.pexels.com/photos/15131499/pexels-photo-15131499.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/18998678/pexels-photo-18998678.jpeg">
+            <img src="https://images.pexels.com/photos/18998678/pexels-photo-18998678.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/31734018/pexels-photo-31734018.jpeg">
+            <img src="https://images.pexels.com/photos/31734018/pexels-photo-31734018.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/33678761/pexels-photo-33678761.jpeg">
+            <img src="https://images.pexels.com/photos/33678761/pexels-photo-33678761.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/32044041/pexels-photo-32044041.jpeg">
+            <img src="https://images.pexels.com/photos/32044041/pexels-photo-32044041.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/31977140/pexels-photo-31977140.jpeg">
+            <img src="https://images.pexels.com/photos/31977140/pexels-photo-31977140.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/28144568/pexels-photo-28144568.jpeg">
+            <img src="https://images.pexels.com/photos/28144568/pexels-photo-28144568.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/35433015/pexels-photo-35433015.jpeg">
+            <img src="https://images.pexels.com/photos/35433015/pexels-photo-35433015.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/15188027/pexels-photo-15188027.jpeg">
+            <img src="https://images.pexels.com/photos/15188027/pexels-photo-15188027.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/18129809/pexels-photo-18129809.jpeg">
+            <img src="https://images.pexels.com/photos/18129809/pexels-photo-18129809.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/18934596/pexels-photo-18934596.jpeg">
+            <img src="https://images.pexels.com/photos/18934596/pexels-photo-18934596.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/28557107/pexels-photo-28557107.jpeg">
+            <img src="https://images.pexels.com/photos/28557107/pexels-photo-28557107.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/32013787/pexels-photo-32013787.jpeg">
+            <img src="https://images.pexels.com/photos/32013787/pexels-photo-32013787.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/34664204/pexels-photo-34664204.jpeg">
+            <img src="https://images.pexels.com/photos/34664204/pexels-photo-34664204.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/2402926/pexels-photo-2402926.jpeg">
+            <img src="https://images.pexels.com/photos/2402926/pexels-photo-2402926.jpeg">
+            </a>
+            <a href="https://images.pexels.com/photos/4269596/pexels-photo-4269596.jpeg">
+            <img src="https://images.pexels.com/photos/4269596/pexels-photo-4269596.jpeg">
+            </a>
+        </div>
+                <footer class="footer">
             <div class="footer-top">
                 <img src="icon.png" alt="">
                 <h2>Start your journey through history today.</h2>
@@ -160,6 +218,6 @@ Travel with style. Explore with purpose. Create moments that last forever.">
         <p>© 2026 Wander Kemet | Crafted with precision by Shadow Elite. All Rights Reserved.</p>
     </div>
 </footer>
-        <script src="main.js"></script>
+<script src="main.js"></script>
     </body>
 </html>

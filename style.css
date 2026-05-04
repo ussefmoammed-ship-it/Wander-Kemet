@@ -84,7 +84,6 @@ h4 , h2 , h3{
     transform: scale(1.4);
     transition: 0.8s;
 }
-/* nav el login */
 .navbar{
     padding: 10px 20px;
     width: 100%;
@@ -125,7 +124,6 @@ h4 , h2 , h3{
 .list.active{
     display: flex;
 }
-/* El hero section */
 .hero{
     position: relative;
     height: 70vh;
